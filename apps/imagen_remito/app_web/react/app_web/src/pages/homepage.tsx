@@ -17,17 +17,13 @@ function HomePage(){
     <Section titulo="Manual" parrafo="Carga y gestión manual de remitos.">
       <ButtonPath ruta="/manual" content="Ir"/>
     </Section>
-  </Container>
-  <Container>
     <Section titulo="Automatico" parrafo="Procesamiento automático sin intervención.">
       <ButtonPath ruta="/auto" content="Ir"/>
     </Section>
-  </Container>
-  <Container>
     <Section titulo="Buscar" parrafo="Consulta rápida en la base de datos.">
       <ButtonPath ruta="/buscar" content="Ir"/>
     </Section>
-    </Container>
+  </Container>
   </>
 );
 }
