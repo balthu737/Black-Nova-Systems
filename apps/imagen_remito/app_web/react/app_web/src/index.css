@@ -1,0 +1,101 @@
+/* ================= VARIABLES (TU DISEÑO) ================= */
+:root {
+  --bg-main: #0a0a0a;
+  --bg-secondary: #111111;
+  --card-bg: #121212;
+
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1aa;
+
+  --accent: #ff2d2d;
+  --accent-hover: #ff4d4d;
+
+  --border: #1f1f1f;
+
+  font-family: 'Inter', system-ui, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* ================= BASE ================= */
+body {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+}
+
+
+/* ================= LINKS ================= */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/* ================= HEADER ================= */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: rgba(10, 10, 10, 0.8);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+}
+
+.header h2 {
+  margin: 0;
+  font-weight: 600;
+}
+
+.logo {
+  height: 55px;
+  transform: scale(1.4);
+  transform-origin: center;
+  filter: drop-shadow(0 0 6px rgba(255, 45, 45, 0.6));
+}
+
+
+/* ================= CONTENEDOR ================= */
+.container {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+
+/* ================= INPUTS ================= */
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: #0f0f0f;
+  color: white;
+}
+
+
+/* ================= LISTA ================= */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
