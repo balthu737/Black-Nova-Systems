@@ -5,7 +5,8 @@ const app = express();
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  return "hello";
+  let b="hallo";
+  res.send(b);
 })
 
 app.listen(3000, () => {
