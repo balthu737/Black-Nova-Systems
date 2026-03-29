@@ -33,3 +33,20 @@ exports.create= (req, res)=>{
         }
     )
 }
+
+exports.edit= (req, res)=>{
+    const {id,user,pswrd,role} = req.body;
+    db.query(
+        "CALL persistUser(?,?,?,?)"[id, user, pswrd, role],
+        (err, results)=>{
+            if(err){
+                return res.status(500).send("Conection error");
+            }
+            if(results.length>0){
+                res.send('user edited succesfuly');
+            }else{
+                res.send('edit user error');
+            }
+        }
+    )
+}
