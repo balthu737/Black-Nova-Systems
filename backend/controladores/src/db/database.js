@@ -5,7 +5,7 @@ const connection= mysql.createPool({
     user:'root',
     password:'',
     database:'black-nova',
-    waitForConnections: True,
+    waitForConnections: true,
     connectionLimit: 10,
     queueLimit:0
 });
