@@ -1,0 +1,13 @@
+const mysql= require("mysql2");
+
+const connection= mysql.createPool({
+    host:'localhost',
+    user:'root',
+    password:'',
+    database:'black-nova',
+    waitForConnections: True,
+    connectionLimit: 10,
+    queueLimit:0
+});
+
+module.exports = connection;
