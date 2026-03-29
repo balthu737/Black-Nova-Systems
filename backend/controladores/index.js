@@ -1,13 +1,9 @@
 const express = require('express');
 const app = express();
+const homeRoutes = require("./src/routes/home");
 
+app.use("/", homeRoutes);
 
-app.use(express.json());
-
-app.get("/", (req, res) => {
-  let b="hallo";
-  res.send(b);
-})
 
 app.listen(3000, () => {
   console.log('Servidor corriendo en http://localhost:3000');
