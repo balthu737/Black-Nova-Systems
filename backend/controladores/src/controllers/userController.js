@@ -1,5 +1,6 @@
 const db= require('../db/database');
 
+/*verificacion*/
 exports.login = (req, res)=>{
     const {user, pswrd}= req.body;
     db.query(
@@ -16,7 +17,7 @@ exports.login = (req, res)=>{
         }
     )
 }
-
+/*crea usuarios*/
 exports.create= (req, res)=>{
     const {user,pswrd,role} = req.body;
     db.query(
@@ -33,7 +34,7 @@ exports.create= (req, res)=>{
         }
     )
 }
-
+/*edita usuairos*/
 exports.edit= (req, res)=>{
     const {id,user,pswrd,role} = req.body;
     db.query(
