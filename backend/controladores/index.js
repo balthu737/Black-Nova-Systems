@@ -9,5 +9,5 @@ app.use("/", userRoutes);
 app.use("/", appsRoutes);
 
 app.listen(3000, () => {
-  console.log('Servidor corriendo en http://localhost:3000');
+  console.log('Servidor corriendo en http://localhost:3000'); /* cambiar el puerto mas adelante ya que no va a ser localhost */
 });
