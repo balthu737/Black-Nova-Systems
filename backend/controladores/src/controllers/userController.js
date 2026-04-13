@@ -10,7 +10,7 @@ exports.login = (req, res)=>{
                 return res.status(500).send("Conection error");
             }
             if (results.length >0){
-                res.send('succesfuly login');
+                res.send('succesfuly login',results);
             }else {
                 res.send('incorrect login');
             }
@@ -34,7 +34,7 @@ exports.create= (req, res)=>{
         }
     )
 }
-/*edita usuairos*/
+/*edita usuarios*/
 exports.edit= (req, res)=>{
     const {id,user,pswrd,role} = req.body;
     db.query(
@@ -47,6 +47,40 @@ exports.edit= (req, res)=>{
                 res.send('user edited succesfuly');
             }else{
                 res.send('edit user error');
+            }
+        }
+    )
+}
+/*elimina usuarios*/
+exports.delete= (req, res)=>{
+    const {id} = req.body;
+    db.query(
+        "CALL deleteUser(?,?)"[id,0],
+        (err, results)=>{
+            if(err){
+                return res.status(500).send("Conection error");
+            }
+            if(results.length>0){
+                res.send('user deleted succesfuly');
+            }else{
+                res.send('error');
+            }
+        }
+    )
+}
+/*banea usuarios*/
+exports.ban= (req, res)=>{
+    const{id}= req.body;
+    db.query(
+        "CALL deleteUser(?,?)"[id,1],
+        (err, results)=>{
+            if(err){
+                return res.status(500).send("Conection error");
+            }
+            if(results.length>0){
+                res.send('user baned succesfuly');
+            }else{
+                res.send('error to ban user');
             }
         }
     )
