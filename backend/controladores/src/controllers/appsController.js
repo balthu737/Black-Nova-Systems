@@ -1,5 +1,5 @@
 const db= require('../db/database');
-const user= require('../controllers/userController');
+const user= require('./userController');
 /*Devuelve todas las apps*/
 exports.view = (req, res)=>{
     const query = db.query(
