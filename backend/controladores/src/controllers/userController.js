@@ -85,3 +85,50 @@ exports.ban= (req, res)=>{
         }
     )
 }
+exports.getById = (req, res)=>{
+    const {id} = req.body;
+    db.query(
+        "CALL get_users(?,?)"[id,''],
+        (err, results)=>{
+            if(err){
+                return res.status(500).send("Conection error");
+            }
+            if(results.length>0){
+                res.send(results);
+            }else{
+                res.send('error to find user');
+            }
+        }
+    )
+}
+exports.getByName = (req, res)=>{
+    const {name} = req.body;
+    db.query(
+        "CALL get_users(?,?)"[0,name],
+        (err, results)=>{
+            if(err){
+                return res.status(500).send("Conection error");
+            }
+            if(results.length>0){
+                res.send(results);
+            }else{
+                res.send('error to find users');
+            }
+        }
+    )
+}
+exports.getAll = (req, res)=>{
+    db.query(
+        "CALL get_users(0,'')",
+        (err, results)=>{
+            if(err){
+                return res.status(500).send("Conection error");
+            }
+            if(results.length>0){
+                res.send(results);
+            }else{
+                res.send('error to find user');
+            }
+        }
+    )
+}
