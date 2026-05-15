@@ -1,0 +1,58 @@
+/* ===========================================
+   ABOUT — Black Nova Systems
+   =========================================== */
+
+.about { background: var(--bg2); }
+
+.about-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+/* ── Columna izquierda ── */
+.about-quote {
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: -0.015em;
+  color: var(--text);
+  margin-bottom: 2rem;
+}
+.about-quote span { color: var(--red); }
+
+/* Stats en fila */
+.about-stats {
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+.about-stat-num {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--red);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+.about-stat-lbl {
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  margin-top: 4px;
+}
+
+/* ── Columna derecha ── */
+.about-body {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.85;
+}
+.about-body + .about-body { margin-top: 1rem; }
+
+/* ── Responsive ── */
+@media (max-width: 860px) {
+  .about-inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}

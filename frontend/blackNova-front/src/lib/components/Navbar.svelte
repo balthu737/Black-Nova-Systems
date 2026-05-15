@@ -2,53 +2,58 @@
   import '../styles/navbar.css';
   import { onMount } from 'svelte';
 
+  /*
+    onMount corre SOLO en el browser, no en SSR.
+    Ideal para listeners de DOM como scroll.
+    Retornamos una función de cleanup que remueve
+    el listener cuando el componente se destruye.
+  */
   let scrolled = false;
 
   onMount(() => {
-    const handler = () => { scrolled = window.scrollY > 20; };
-    window.addEventListener('scroll', handler);
-    return () => window.removeEventListener('scroll', handler);
+    const handleScroll = () => {
+      scrolled = window.scrollY > 20;
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   });
 
   const links = [
-    { label: 'Características', href: '#features' },
-    { label: 'Testimonios',     href: '#testimonials' },
-    { label: 'Precios',         href: '#pricing' },
-    { label: 'Empresa',         href: '#company' },
+    { label: 'Producto',   href: '#solution'  },
+    { label: 'Soluciones', href: '#problems'  },
+    { label: 'Nosotros',   href: '#about'     },
+    { label: 'Contacto',   href: '#footer'    },
   ];
 </script>
 
+<!--
+  class:scrolled={scrolled} es la sintaxis de Svelte para
+  agregar una clase condicionalmente. Equivale a:
+  class={scrolled ? 'navbar scrolled' : 'navbar'}
+-->
 <header class="navbar" class:scrolled>
   <div class="container">
-    <div class="navbar__inner">
-      <!-- Logo -->
-      <a href="/" class="navbar__logo">
-        <div class="navbar__logo-icon">
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-            <path d="M9 1L16 5V13L9 17L2 13V5L9 1Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
-            <circle cx="9" cy="9" r="2.5" fill="white"/>
-          </svg>
+    <div class="nav-inner">
+
+      <a href="/" class="logo">
+        <div class="logo-mark">
+          <div class="logo-ring"></div>
+          <div class="logo-core"></div>
         </div>
-        Nexus
+        Black Nova Systems
       </a>
 
-      <!-- Nav links -->
-      <nav class="navbar__nav" aria-label="Navegación principal">
+      <nav class="nav-links">
         {#each links as link}
-          <a href={link.href} class="navbar__link">{link.label}</a>
+          <a href={link.href} class="nav-link">{link.label}</a>
         {/each}
+        <button class="btn-red">Solicitar Demo</button>
       </nav>
 
-      <!-- Actions -->
-      <div class="navbar__actions">
-        <a href="#login"   class="btn btn-outline" style="padding:10px 20px; font-size:0.875rem;">Ingresar</a>
-        <a href="#signup"  class="btn btn-primary" style="padding:10px 20px; font-size:0.875rem;">Empezar gratis</a>
-        <button class="navbar__toggle" aria-label="Menú">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
+      <button class="nav-hamburger" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+
     </div>
   </div>
 </header>

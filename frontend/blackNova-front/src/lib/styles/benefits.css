@@ -1,0 +1,76 @@
+/* ===========================================
+   BENEFITS — Black Nova Systems
+   =========================================== */
+
+.benefits { background: var(--bg); }
+
+.benefits-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+.benefits-header .section-sub {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ben-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+/*
+  Igual que .prob-card, estas cards usan .fade-up + .visible
+  con svelte-intersection-observer. El delay escalonado
+  se aplica inline desde Benefits.svelte.
+*/
+.ben-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 1.5rem;
+  cursor: default;
+  transition: border-color 0.25s ease,
+              transform 0.25s ease;
+}
+.ben-card:hover {
+  border-color: var(--border-red);
+  transform: translateY(-3px);
+}
+
+/* Número decorativo (01, 02, 03, 04) */
+.ben-number {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--text-dim);
+  margin-bottom: 1.2rem;
+}
+
+/* Ícono */
+.ben-icon {
+  color: var(--red);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.ben-card h3 {
+  font-size: 0.975rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+.ben-card p {
+  font-size: 0.825rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .ben-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 520px) {
+  .ben-grid { grid-template-columns: 1fr; }
+}

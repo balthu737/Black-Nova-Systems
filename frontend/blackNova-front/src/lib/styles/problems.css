@@ -1,0 +1,68 @@
+/* ===========================================
+   PROBLEMS — Black Nova Systems
+   =========================================== */
+
+.problems { background: var(--bg); }
+
+.problems-header { margin-bottom: 3.5rem; }
+
+.prob-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+/*
+  Las cards usan la clase .fade-up + .visible
+  controladas por svelte-intersection-observer en Problems.svelte.
+  La animación y transición están definidas en global.css.
+  El transition-delay escalonado (0s, 0.08s, 0.16s) se aplica
+  inline desde el componente Svelte con style="transition-delay:..."
+*/
+.prob-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.75rem;
+  transition: border-color 0.25s ease,
+              transform 0.25s ease;
+}
+.prob-card:hover {
+  border-color: var(--border-red);
+  transform: translateY(-3px);
+}
+
+.prob-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius);
+  background: var(--red-dim);
+  border: 1px solid var(--border-red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  color: var(--red);
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.prob-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.6rem;
+}
+.prob-card p {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* ── Responsive ── */
+@media (max-width: 860px) {
+  .prob-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px) {
+  .prob-grid { grid-template-columns: 1fr; }
+}

@@ -3,130 +3,132 @@
 </script>
 
 <section class="hero" id="home">
-  <!-- Background -->
-  <div class="hero__bg">
-    <div class="hero__orb hero__orb--1"></div>
-    <div class="hero__orb hero__orb--2"></div>
-    <div class="hero__grid"></div>
-  </div>
+
+  <!-- Starfield SVG de fondo -->
+  <svg class="hero-bg" viewBox="0 0 1100 700" preserveAspectRatio="xMidYMid slice">
+    <circle cx="80"  cy="60"  r="1"   fill="rgba(255,255,255,0.4)"/>
+    <circle cx="200" cy="140" r="0.7" fill="rgba(255,255,255,0.3)"/>
+    <circle cx="340" cy="30"  r="1.2" fill="rgba(255,255,255,0.5)"/>
+    <circle cx="500" cy="90"  r="0.8" fill="rgba(255,255,255,0.3)"/>
+    <circle cx="650" cy="20"  r="1"   fill="rgba(255,255,255,0.4)"/>
+    <circle cx="820" cy="70"  r="0.6" fill="rgba(255,255,255,0.25)"/>
+    <circle cx="960" cy="110" r="1.1" fill="rgba(255,255,255,0.35)"/>
+    <circle cx="120" cy="250" r="0.7" fill="rgba(255,255,255,0.2)"/>
+    <circle cx="290" cy="320" r="1"   fill="rgba(255,255,255,0.35)"/>
+    <circle cx="750" cy="180" r="0.8" fill="rgba(255,255,255,0.3)"/>
+    <circle cx="900" cy="260" r="1"   fill="rgba(255,255,255,0.25)"/>
+    <circle cx="380" cy="480" r="0.6" fill="rgba(255,255,255,0.15)"/>
+    <circle cx="600" cy="550" r="1"   fill="rgba(255,255,255,0.2)"/>
+  </svg>
 
   <div class="container">
-    <div class="hero__content">
-      <!-- Text side -->
-      <div class="hero__text">
-        <div class="hero__badge">
-          <span class="badge">
-            <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor">
-              <circle cx="5" cy="5" r="5"/>
-            </svg>
-            Nuevo — Lanzamos v2.0
-          </span>
+    <div class="hero-inner">
+
+      <!-- Columna de texto -->
+      <div class="hero-text">
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          Automatización Empresarial Avanzada
         </div>
 
-        <h1 class="hero__title">
-          La plataforma que <em>escala</em> con tu negocio
+        <h1>
+          Automatizá los procesos<br>
+          de <span class="accent">tu empresa</span>
         </h1>
 
-        <p class="hero__desc">
-          Potenciá tu equipo con herramientas inteligentes, analíticas en tiempo real
-          y flujos de trabajo automatizados. Todo en un solo lugar.
+        <p class="hero-sub">
+          Transformamos el trabajo manual en sistemas automatizados
+          inteligentes. Digitalización de documentos, extracción de
+          datos y flujos de trabajo sin errores.
         </p>
 
-        <div class="hero__actions">
-          <a href="#signup" class="btn btn-primary">
-            Comenzar gratis
+        <div class="hero-btns">
+          <button class="btn-red">
+            Solicitar Demo
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-              <path d="M3 7H11M11 7L7.5 3.5M11 7L7.5 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M3 7H11M11 7L7.5 3.5M11 7L7.5 10.5"
+                stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-          </a>
-          <a href="#demo" class="btn btn-outline">
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-              <circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M5.5 5L9.5 7L5.5 9V5Z" fill="currentColor"/>
-            </svg>
-            Ver demo
-          </a>
+          </button>
+          <button class="btn-outline">Ver cómo funciona →</button>
         </div>
 
-        <div class="hero__trust">
-          <div class="hero__avatars">
-            {#each ['AG', 'MR', 'LP', 'CK'] as initials}
-              <div class="hero__avatar">{initials}</div>
-            {/each}
+        <div class="hero-trust">
+          <div>
+            <div class="trust-stat-num">+200</div>
+            <div class="trust-stat-lbl">Empresas automatizadas</div>
           </div>
-          <p class="hero__trust-text">
-            <strong>+12.000 equipos</strong> ya confían en Nexus
-          </p>
+          <div class="trust-divider"></div>
+          <div>
+            <div class="trust-stat-num">98%</div>
+            <div class="trust-stat-lbl">Reducción de errores</div>
+          </div>
+          <div class="trust-divider"></div>
+          <div>
+            <div class="trust-stat-num">5M+</div>
+            <div class="trust-stat-lbl">Documentos procesados</div>
+          </div>
         </div>
       </div>
 
-      <!-- Visual side -->
-      <div class="hero__visual">
-        <!-- Floating card 1 -->
-        <div class="hero__floating hero__floating--1">
-          <div class="hero__floating-icon hero__floating-icon--green">📈</div>
-          <div class="hero__floating-text">
-            <strong>+34% crecimiento</strong>
-            <span>Este mes</span>
-          </div>
-        </div>
+      <!-- Columna visual: agujero negro SVG -->
+      <div class="hero-visual">
+        <div class="blackhole-wrap">
+          <svg viewBox="0 0 420 420" width="420" height="420" style="overflow:visible">
+            <defs>
+              <radialGradient id="bh-glow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%"   stop-color="#FF2A2A" stop-opacity="0.18"/>
+                <stop offset="40%"  stop-color="#FF2A2A" stop-opacity="0.06"/>
+                <stop offset="100%" stop-color="#FF2A2A" stop-opacity="0"/>
+              </radialGradient>
+              <radialGradient id="disc-grad" cx="50%" cy="35%" r="65%">
+                <stop offset="0%"   stop-color="#FF5A2A" stop-opacity="0.9"/>
+                <stop offset="40%"  stop-color="#FF2A2A" stop-opacity="0.6"/>
+                <stop offset="100%" stop-color="#8B0000" stop-opacity="0.1"/>
+              </radialGradient>
+            </defs>
 
-        <!-- Main card -->
-        <div class="hero__card">
-          <div class="hero__card-header">
-            <div class="hero__card-dots">
-              <div class="hero__card-dot hero__card-dot--red"></div>
-              <div class="hero__card-dot hero__card-dot--yellow"></div>
-              <div class="hero__card-dot hero__card-dot--green"></div>
-            </div>
-            <span class="hero__card-label">dashboard.nexus.io</span>
-          </div>
+            <!-- Glow ambiental -->
+            <circle cx="210" cy="210" r="180" fill="url(#bh-glow)"/>
 
-          <div class="hero__metric">
-            <p class="hero__metric-label">Ingresos mensuales</p>
-            <p class="hero__metric-value">
-              $84.2k
-              <span class="hero__metric-delta">↑ 12.5%</span>
-            </p>
-          </div>
+            <!-- Disco de acreción — anillos elípticos -->
+            <ellipse cx="210" cy="210" rx="165" ry="45" fill="none" stroke="#FF2A2A" stroke-width="1"   stroke-opacity="0.08"/>
+            <ellipse cx="210" cy="210" rx="145" ry="38" fill="none" stroke="#FF2A2A" stroke-width="1.5" stroke-opacity="0.12"/>
+            <ellipse cx="210" cy="210" rx="122" ry="30" fill="none" stroke="#FF3A2A" stroke-width="2"   stroke-opacity="0.18"/>
+            <ellipse cx="210" cy="210" rx="100" ry="24" fill="none" stroke="#FF2A2A" stroke-width="2.5" stroke-opacity="0.28"/>
 
-          <!-- Sparkline SVG -->
-          <div class="hero__sparkline">
-            <svg viewBox="0 0 280 60" preserveAspectRatio="none">
-              <defs>
-                <linearGradient id="lineGrad" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#6C63FF" stop-opacity="0.4"/>
-                  <stop offset="100%" stop-color="#6C63FF" stop-opacity="0"/>
-                </linearGradient>
-              </defs>
-              <path d="M0,50 C20,45 40,55 60,40 C80,25 100,35 120,20 C140,10 160,15 180,8 C200,2 220,12 240,5 C255,0 270,3 280,1"
-                stroke="#6C63FF" stroke-width="2" fill="none" stroke-linecap="round"/>
-              <path d="M0,50 C20,45 40,55 60,40 C80,25 100,35 120,20 C140,10 160,15 180,8 C200,2 220,12 240,5 C255,0 270,3 280,1 L280,60 L0,60 Z"
-                fill="url(#lineGrad)"/>
-            </svg>
-          </div>
+            <!-- Mitad superior del disco (frente) -->
+            <path d="M 70 210 A 140 38 0 0 1 350 210" fill="url(#disc-grad)" opacity="0.55"/>
+            <!-- Mitad inferior (detrás) -->
+            <path d="M 70 210 A 140 38 0 0 0 350 210" fill="#FF2A2A" opacity="0.05"/>
 
-          <div class="hero__stats-row">
-            <div class="hero__stat">
-              <p class="hero__stat-num">1.284</p>
-              <p class="hero__stat-lbl">Usuarios activos</p>
-            </div>
-            <div class="hero__stat">
-              <p class="hero__stat-num">98.7%</p>
-              <p class="hero__stat-lbl">Uptime SLA</p>
-            </div>
-          </div>
-        </div>
+            <!-- Anillos interiores brillantes -->
+            <ellipse cx="210" cy="210" rx="80" ry="18" fill="none" stroke="#FF4A2A" stroke-width="3" stroke-opacity="0.45"/>
+            <ellipse cx="210" cy="210" rx="62" ry="13" fill="none" stroke="#FF2A2A" stroke-width="4" stroke-opacity="0.6"/>
 
-        <!-- Floating card 2 -->
-        <div class="hero__floating hero__floating--2">
-          <div class="hero__floating-icon hero__floating-icon--blue">⚡</div>
-          <div class="hero__floating-text">
-            <strong>Automatización activa</strong>
-            <span>24 flujos corriendo</span>
-          </div>
+            <!-- Streams de energía -->
+            <path d="M 360 120 Q 310 160 260 195" fill="none" stroke="#FF2A2A" stroke-width="1.5" stroke-opacity="0.6" stroke-linecap="round"/>
+            <path d="M 390 220 Q 340 215 280 210" fill="none" stroke="#FF2A2A" stroke-width="2"   stroke-opacity="0.55" stroke-linecap="round"/>
+            <path d="M 355 310 Q 305 270 260 225" fill="none" stroke="#FF2A2A" stroke-width="1.25" stroke-opacity="0.5" stroke-linecap="round"/>
+            <path d="M 60  140 Q 110 170 160 196" fill="none" stroke="#FF2A2A" stroke-width="1"   stroke-opacity="0.4" stroke-linecap="round"/>
+            <path d="M 30  205 Q 90  208 160 209" fill="none" stroke="#FF2A2A" stroke-width="1.5" stroke-opacity="0.5" stroke-linecap="round"/>
+
+            <!-- Partículas sobre los streams -->
+            <circle cx="340" cy="135" r="2.5" fill="#FF2A2A" opacity="0.8"/>
+            <circle cx="375" cy="220" r="3"   fill="#FF2A2A" opacity="0.9"/>
+            <circle cx="340" cy="295" r="2"   fill="#FF2A2A" opacity="0.6"/>
+            <circle cx="55"  cy="205" r="2.2" fill="#FF2A2A" opacity="0.7"/>
+
+            <!-- Horizonte de eventos (núcleo) -->
+            <circle cx="210" cy="210" r="58" fill="#0B0B0B"/>
+            <circle cx="210" cy="210" r="58" fill="none" stroke="#FF2A2A" stroke-width="1"   stroke-opacity="0.7"/>
+            <circle cx="210" cy="210" r="52" fill="none" stroke="#FF2A2A" stroke-width="2.5" stroke-opacity="0.4"/>
+            <circle cx="210" cy="210" r="46" fill="#0B0B0B"/>
+          </svg>
         </div>
       </div>
+
     </div>
   </div>
 </section>
