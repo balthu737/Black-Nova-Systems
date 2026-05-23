@@ -1,7 +1,7 @@
-const db= require('../db/database');
-
+const db= require('../utils/database');
+const cookie= require('../utils/cookiesController');
 /*verificacion*/
-exports.login = (req, res)=>{
+exports.login = async (req, res)=>{
     const {user, pswrd}= req.body;
     db.query(
         "CALL verify(?,?)", [user, pswrd],
@@ -10,6 +10,8 @@ exports.login = (req, res)=>{
                 return res.status(500).send("Conection error");
             }
             if (results.length >0){
+                const usuario = results[0][0]; 
+                cookie.create(usuario.id);
                 res.send('succesfuly login',results);
             }else {
                 res.send('incorrect login');
@@ -27,6 +29,8 @@ exports.create= (req, res)=>{
                 return res.status(500).send("Conection error");
             }
             if(results.length>0){
+                const usuario = results[0][0]; 
+                cookie.create(usuario.id);
                 res.send('user created succesfuly');
             }else{
                 res.send('create user error');

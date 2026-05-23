@@ -1,4 +1,4 @@
-const db= require('../db/database');
+const db= require('../utils/database');
 const user= require('./userController');
 /*Devuelve todas las apps*/
 exports.view = (req, res)=>{
@@ -16,19 +16,6 @@ exports.view = (req, res)=>{
     res.send(query);
 }
 /*redireccionar*/
-exports.redirect = (req, res)=>{
-    try {
-        const url=new URL(req);
-        if(url){
-            window.location.href(url);
-            res.send('redirected succesfuly');
-        }else{
-            res.send('url not exists');
-        }
-    }catch(err){
-        res.send('URL not exist');
-    }
-}
 exports.validateUser = (req, res)=>{
     const validate= user.login(req);
     if(validate){
@@ -84,4 +71,24 @@ exports.finalizeMaintenence = (req, res)=>{
             }
         }
     )
+}
+exports.askPermission = (req,res)=>{
+    const {id, app}= req.body;
+    db.query(
+        "CALL askPermissionForApp(?,?)" [id, app],
+        (err, results)=>{
+            if(err){
+                return res.status(500).send("Conection error");
+            }
+            if(results.length>0){
+                res.send('user permitted');
+            }else{
+                res.send('user hasnt the app');
+            }
+        }
+    )
+}
+exports.buy = (req, res)=>{
+    const {user, app}= req.body;
+    
 }

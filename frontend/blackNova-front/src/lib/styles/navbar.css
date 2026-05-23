@@ -40,9 +40,12 @@
   font-weight: 700;
   font-size: 1.05rem;
   letter-spacing: -0.02em;
+  background: none;
   color: var(--text);
   user-select: none;
+  border: none;
 }
+
 
 .logo-mark {
   width: 30px;

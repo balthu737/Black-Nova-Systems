@@ -1,5 +1,8 @@
 <script>
   import '../styles/hero.css';
+  import { onMount, createEventDispatcher } from 'svelte';
+  const dispatch = createEventDispatcher();
+
 </script>
 
 <section class="hero" id="home">
@@ -43,15 +46,14 @@
         </p>
 
         <div class="hero-btns">
-          <button class="btn-red">
-            Solicitar Demo
+          <button class="btn-red" on:click={() => dispatch('navigate', 'products')}>
+            Ver productos
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
               <path d="M3 7H11M11 7L7.5 3.5M11 7L7.5 10.5"
                 stroke="currentColor" stroke-width="1.5"
                 stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </button>
-          <button class="btn-outline">Ver cómo funciona →</button>
         </div>
 
         <div class="hero-trust">

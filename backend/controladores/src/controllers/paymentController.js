@@ -1,6 +1,12 @@
-const db= require('../db/database');
+const db= require('../utils/database');
 const user= require('./userController');
-exports.redirect = (req, res) =>{
+exports.register = (req, res) =>{
+    
+}
+exports.pay = (req, res) =>{
+
+}
+exports.cancel = (req, res) =>{
     
 }
 
