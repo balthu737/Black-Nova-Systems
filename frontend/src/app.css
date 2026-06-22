@@ -1,0 +1,32 @@
+/* src/app.css */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0a0a0a;
+  color: #fff;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+:root {
+  --red: #e53e3e;
+  --red-dark: #c53030;
+  --red-deeper: #9b2c2c;
+  --bg: #0a0a0a;
+  --bg-card: #111;
+  --bg-card-dark: #0e0e0e;
+  --border: #222;
+  --text-muted: #888;
+  --text-secondary: #aaa;
+  --radius-card: 16px;
+  --radius-btn: 10px;
+}
